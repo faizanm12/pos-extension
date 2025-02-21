@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "d07358c0f1666b8a2f14d0050ef54997"
+application_url = "https://vertex-violence-sandwich-bucks.trycloudflare.com"
+embedded = true
+name = "pos-extension"
+handle = "pos-extension-15"
+
+[build]
+include_config_on_deploy = true
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://vertex-violence-sandwich-bucks.trycloudflare.com/auth/callback",
+  "https://vertex-violence-sandwich-bucks.trycloudflare.com/auth/shopify/callback",
+  "https://vertex-violence-sandwich-bucks.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
