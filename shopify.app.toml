@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "d07358c0f1666b8a2f14d0050ef54997"
-application_url = "https://vertex-violence-sandwich-bucks.trycloudflare.com"
+application_url = "https://intensity-overcome-controversial-audience.trycloudflare.com"
 embedded = true
 name = "pos-extension"
 handle = "pos-extension-15"
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://vertex-violence-sandwich-bucks.trycloudflare.com/auth/callback",
-  "https://vertex-violence-sandwich-bucks.trycloudflare.com/auth/shopify/callback",
-  "https://vertex-violence-sandwich-bucks.trycloudflare.com/api/auth/callback"
+  "https://intensity-overcome-controversial-audience.trycloudflare.com/auth/callback",
+  "https://intensity-overcome-controversial-audience.trycloudflare.com/auth/shopify/callback",
+  "https://intensity-overcome-controversial-audience.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]

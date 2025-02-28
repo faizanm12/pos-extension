@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { Tile, reactExtension, useApi } from '@shopify/ui-extensions-react/point-of-sale'
+import { Tile, reactExtension, useApi,useCartSubscription } from '@shopify/ui-extensions-react/point-of-sale'
 
 const TileComponent = () => {
   const api = useApi()
+  const cart = useCartSubscription();
+  
+  const [enabled, setEnabled] = useState(Number(cart?.subtotal) > 0);
+  
+  useEffect(() => {
+    setEnabled(Number(cart?.subtotal) > 0)
+  },[cart?.subtotal])
+
   return (
     <Tile
       title="Apply Retainley"
@@ -11,7 +19,7 @@ const TileComponent = () => {
       onPress={() => {
         api.action.presentModal()
       }}
-      enabled
+      enabled={enabled}
     />
   )
 }
