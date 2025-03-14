@@ -37,7 +37,7 @@ const Modal = () => {
   }
 
   const getRetainleyCoupon = async () => {
-    if(Number(cart?.subtotal) === 0){
+    if(Number(cart?.subtotal) == 0){
       api.toast.show('Nothing in your cart.');
       return;
     }
